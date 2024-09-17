@@ -8,14 +8,16 @@ const WIDTH = Dimensions.get("screen")
 const HomeScreen = ({ navigation }: any) => {
     return (
         <SafeAreaView style={styles.main}>
-            <StatusBar translucent backgroundColor='rgba(0,0,0,0)' />
+            <StatusBar translucent backgroundColor={COLORS.primary} />
             <View style={styles.content_container}>
-                <Image style={styles.content_image} source={require('../assets/home-icon.png')} />
+                <Image style={styles.content_image} source={require('../assets/gallarySample/welcome2.jpg')} />
                 <View style={styles.content_head_text_container}>
                     <Text style={styles.content_head_text}>
-                        Delicious Food
+                        {/* GoDrive */}
+                        XGallary
                     </Text>
-                    <Text>We help you to find best and delicious food</Text>
+                    <Text>Organize files that matter to you without</Text>
+                    <Text>worrying about security</Text>
                 </View>
             </View>
             <View style={styles.footer}>
@@ -30,7 +32,7 @@ const HomeScreen = ({ navigation }: any) => {
 }
 
 const styles = StyleSheet.create({
-    main: { flex: 0.95 },
+    main: { flex: 1, backgroundColor: COLORS.white },
     content_container: {
         flex: 1,
         alignItems: 'center',
@@ -38,20 +40,21 @@ const styles = StyleSheet.create({
     },
     content_image: {
         width: '65%',
-        height: '40%',
+        height: '35%',
         overflow: 'hidden',
         borderRadius: 220,
         marginLeft: 20,
     },
     content_head_text_container: {justifyContent: 'center',alignItems: 'center'},
     content_head_text: {
+        paddingBottom: 30,
         justifyContent: 'center',
         fontWeight: 'bold',
         fontSize: 28,
-        color: COLORS.danger
+        color: 'dodgerblue'
     },
     
-    footer: { justifyContent: 'center', alignItems: 'center' },
+    footer: { justifyContent: 'center', alignItems: 'center', marginBottom: 20 },
     footer_button: {
         backgroundColor: COLORS.primary,
         width: '50%',
