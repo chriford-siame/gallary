@@ -10,7 +10,7 @@ import {
   StyleSheet,
 } from 'react-native';
 
-import HomeScreen from './src/screens/Home';
+import Home from './src/screens/Home';
 import { createStackNavigator } from '@react-navigation/stack';
 import { NavigationContainer } from '@react-navigation/native';
 
@@ -20,8 +20,9 @@ function App(): React.JSX.Element {
   return (
     <NavigationContainer>
       <Stack.Navigator screenOptions={{ headerShown: false }} initialRouteName='home'>
-        <Stack.Screen name='home' component={HomeScreen} />
-        {/* <Stack.Screen name='FoodsScreen' component={FoodsScreen} /> */}
+        <Stack.Screen name='home' component={Home} />
+        <Stack.Screen name='signup' component={Signup} />
+        <Stack.Screen name='signup' component={Login} />
       </Stack.Navigator>
     </NavigationContainer>
   );

@@ -5,7 +5,7 @@ import { SafeAreaView } from "react-native";
 import COLORS from "../constants/colors";
 
 const WIDTH = Dimensions.get("screen")
-const HomeScreen = ({ navigation }: any) => {
+const Home = ({ navigation }: any) => {
     return (
         <SafeAreaView style={styles.main}>
             <StatusBar translucent backgroundColor={COLORS.primary} />
@@ -21,7 +21,7 @@ const HomeScreen = ({ navigation }: any) => {
                 </View>
             </View>
             <View style={styles.footer}>
-                <TouchableOpacity activeOpacity={0.8} onPress={() => navigation.navigate('FoodsScreen')}>
+                <TouchableOpacity activeOpacity={0.8} onPress={() => navigation.navigate('signup')}>
                     <View style={styles.footer_button}>
                         <Text style={styles.footer_button_text}>Get Started</Text>
                     </View>
@@ -69,4 +69,4 @@ const styles = StyleSheet.create({
         color: COLORS.white
     },
 })
-export default HomeScreen;
+export default Home;
