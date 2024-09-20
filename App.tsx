@@ -6,23 +6,22 @@
  */
 
 import React from 'react';
-import {
-  StyleSheet,
-} from 'react-native';
 
 import Home from './src/screens/Home';
 import { createStackNavigator } from '@react-navigation/stack';
 import { NavigationContainer } from '@react-navigation/native';
+import Signup from './src/screens/Signup';
+import Login from './src/screens/Login';
 
 const Stack = createStackNavigator();
 
 function App(): React.JSX.Element {
   return (
     <NavigationContainer>
-      <Stack.Navigator screenOptions={{ headerShown: false }} initialRouteName='home'>
+      <Stack.Navigator screenOptions={{ headerShown: false }} initialRouteName='login'>
         <Stack.Screen name='home' component={Home} />
         <Stack.Screen name='signup' component={Signup} />
-        <Stack.Screen name='signup' component={Login} />
+        <Stack.Screen name='login' component={Login} />
       </Stack.Navigator>
     </NavigationContainer>
   );
