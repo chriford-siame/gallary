@@ -21,7 +21,7 @@ const Home = ({ navigation }: any) => {
                 </View>
             </View>
             <View style={styles.footer}>
-                <TouchableOpacity activeOpacity={0.8} onPress={() => navigation.navigate('signup')}>
+                <TouchableOpacity activeOpacity={0.8} onPress={() => navigation.navigate('login')}>
                     <View style={styles.footer_button}>
                         <Text style={styles.footer_button_text}>Get Started</Text>
                     </View>
@@ -58,6 +58,7 @@ const styles = StyleSheet.create({
     footer_button: {
         backgroundColor: COLORS.primary,
         width: '50%',
+        cursor: 'pointer',
         justifyContent: 'center',
         alignContent: 'center',
         alignItems: 'center',
