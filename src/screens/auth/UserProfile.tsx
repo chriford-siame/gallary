@@ -28,7 +28,7 @@ const UserProfile = ({ navigation }: any) => {
                     <View>
                         <View>
                             <Image
-                                source={require('../../assets/images/Userprofile.jpg')}
+                                source={require('../../assets/gallarySample/welcome.jpg')}
                                 style={styles.image}
                                 />
                         </View>
