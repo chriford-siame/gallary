@@ -16,44 +16,53 @@ const screen_height = height;
 interface UserInterface {
     username: string
     email: string
-    password: string
-    confirmPassword: string
+    password2: string
+    password: any
 }
-const Register = ({ navigation }: any) => {
+const Signup = ({ navigation }: any) => {
     const [userData, setUserData] = useState<UserInterface>({
         username: '',
         email: '',
         password: '',
-        confirmPassword: ''
+        password2: '',
     })
     const goToHome = () => {
         navigation.navigate('home')
     }
-    const goToLogin = () => {
-        navigation.navigate('login')
+    const goToRegister = () => {
+        navigation.navigate('signup')
+    }
+    const goToResetPassword = () => {
+        navigation.navigate('password_reset')
     }
     return (
         <SafeAreaView style={{ 
             flex: 1, 
-            top: 20, 
-            backgroundColor: 'rgba(10, 10, 10, 0.2)', 
+            top: 0
         }}>
             <View style={{
                 flex: 1,
                 paddingHorizontal: 20,
                 paddingVertical: 20,
+                top: 100,
                 flexDirection: 'column',
-                justifyContent: 'center',
-                alignItems: 'center',
 
             }}>
                 <View>
                     <Text style={{
                         fontSize: 30,
                         fontWeight: 'bold',
-                    }}>Register</Text>
+                        color: COLORS.secondary,
+                        textAlign: 'center',
+                        paddingBottom: 20
+                    }}>
+                        Signup
+                    </Text>
                 </View>
-                <View>
+                <View style={{
+                    flexDirection: "column",
+                    gap: 10,
+                }}>
                     <TextInput
                         style={styles.input}
                         placeholder="Username"
@@ -62,7 +71,7 @@ const Register = ({ navigation }: any) => {
                     />
                     <TextInput
                         style={styles.input}
-                        placeholder="Email address"
+                        placeholder="Email"
                         value={userData.email}
                         onChangeText={(text) => setUserData({...userData, email: text})}
                     />
@@ -75,34 +84,29 @@ const Register = ({ navigation }: any) => {
                     />
                     <TextInput
                         style={styles.input}
-                        placeholder="confirm password"
-                        value={userData.confirmPassword}
-                        onChangeText={(text) => setUserData({...userData, confirmPassword: text})}
+                        placeholder="re-enter password"
+                        value={userData.password2}
+                        onChangeText={(text) => setUserData({...userData, password2: text})}
                         secureTextEntry
                     />
                     <View style={styles.submitButton}>
                         <Button
-                            title="Submit"
-                            color={'green'}
+                            title="Signup"
+                            color={COLORS.primary}
                         />
                     </View>
+
                     <View style={{
                         flexDirection: "row",
-                        justifyContent: "space-between",
+                        justifyContent: "center",
                         top: 15,
                         paddingHorizontal: 5,
                     }}>
                         <TouchableOpacity 
                             activeOpacity={0.5}
-                            onPress={goToLogin}
+                            onPress={goToResetPassword}
                         >
-                            <Text style={styles.navigationText}>already have an account?</Text>
-                        </TouchableOpacity>
-                        <TouchableOpacity 
-                            activeOpacity={0.5}
-                            onPress={goToHome}
-                        >
-                            <Text style={styles.navigationText}>Home</Text>
+                            <Text style={styles.navigationText}>Already have an account?</Text>
                         </TouchableOpacity>
                     </View>
                 </View>
@@ -118,6 +122,7 @@ const styles = StyleSheet.create({
         borderColor: '#555555',
         borderRadius: 10,
         backgroundColor: '#ffffff',
+        color: COLORS.secondary,
         textAlign: 'left',
         fontSize: 20,
         paddingHorizontal: 10,
@@ -130,4 +135,4 @@ const styles = StyleSheet.create({
         top: 10,
     }
 })
-export default Register;
+export default Signup;
