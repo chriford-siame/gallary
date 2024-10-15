@@ -16,8 +16,8 @@ const Home = ({ navigation }: any) => {
                         {/* GoDrive */}
                         XGallary
                     </Text>
-                    <Text>Organize files that matter to you without</Text>
-                    <Text>worrying about security</Text>
+                    <Text style={{color: COLORS.secondary}}>Organize files that matter to you without</Text>
+                    <Text style={{color: COLORS.secondary}}>worrying about security</Text>
                 </View>
             </View>
             <View style={styles.footer}>
