@@ -13,6 +13,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import Signup from './src/screens/auth/Signup';
 import Login from './src/screens/auth/Login';
 import UserProfile from './src/screens/auth/UserProfile';
+import PasswordReset from './src/screens/auth/PasswordReset';
 
 const Stack = createStackNavigator();
 
@@ -23,7 +24,7 @@ function App(): React.JSX.Element {
         <Stack.Screen name='home' component={Home} />
         <Stack.Screen name='signup' component={Signup} />
         <Stack.Screen name='login' component={Login} />
-        <Stack.Screen name='password_reset' component={Login} />
+        <Stack.Screen name='password_reset' component={PasswordReset} />
         <Stack.Screen name='user_profile' component={UserProfile} />
       </Stack.Navigator>
     </NavigationContainer>
