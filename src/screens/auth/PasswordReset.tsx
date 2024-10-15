@@ -13,58 +13,63 @@ import COLORS from "../../constants/colors";
 
 const { width, height } = Dimensions.get("screen")
 const screen_height = height;
-
+interface UserInterface {
+    email: string
+}
 const PasswordReset = ({ navigation }: any) => {
-    const [userEmail, setUserEmail] = useState<string>('')
+    const [userData, setUserData] = useState<UserInterface>({
+        email: '',
+    })
     const goToHome = () => {
-        navigation.navigate('Home')
+        navigation.navigate('home')
     }
-    const goToLogin = () => {
-        navigation.navigate('Login')
+    const goToRegister = () => {
+        navigation.navigate('signup')
+    }
+    const goToResetPassword = () => {
+        navigation.navigate('password_reset')
     }
     return (
         <SafeAreaView style={{ 
             flex: 1, 
-            top: 20, 
-            backgroundColor: 'rgba(10, 10, 10, 0.2)', 
+            top: 0
         }}>
             <View style={{
                 flex: 1,
                 paddingHorizontal: 20,
                 paddingVertical: 20,
+                top: 100,
                 flexDirection: 'column',
-                justifyContent: 'center',
-                alignItems: 'center',
 
             }}>
                 <View>
                     <Text style={{
                         fontSize: 30,
                         fontWeight: 'bold',
-                    }}>Reset Password</Text>
+                        color: COLORS.secondary,
+                        textAlign: 'center',
+                        paddingBottom: 20
+                    }}>
+                        Forgot Password
+                    </Text>
                 </View>
-                <View>
+                <View style={{
+                    flexDirection: "column",
+                    gap: 10,
+                }}>
                     <TextInput
-                        style={styles.input}
-                        placeholder="Email address"
-                        value={userEmail}
-                        onChangeText={(text) => setUserEmail(text)}
+                        style={{...styles.input, color: 'black'}}
+                        placeholder="email"
+                        value={userData.email}
+                        onChangeText={(text) => setUserData({...userData, email: text})}
                     />
                     
                     <View style={styles.submitButton}>
                         <Button
-                            title="Submit"
-                            color={'green'}
+                            title="Reset"
+                            color={COLORS.primary}
                         />
                     </View>
-                    <TouchableOpacity 
-                        activeOpacity={0.5}
-                        onPress={goToHome}
-                    >
-                        <Text style={styles.navigationText}>
-                            Home
-                        </Text>
-                    </TouchableOpacity>
                 </View>
             </View>
         </SafeAreaView>
@@ -73,20 +78,19 @@ const PasswordReset = ({ navigation }: any) => {
 
 const styles = StyleSheet.create({
     input: {
+        width: '100%',
         borderWidth: 1,
-        borderColor: 'gray',
+        borderColor: '#555555',
         borderRadius: 10,
-        width: width - 40,
-        marginTop: 10,
-        backgroundColor: COLORS.white,
-        textAlign: 'center',
+        backgroundColor: '#ffffff',
+        color: COLORS.secondary,
+        textAlign: 'left',
         fontSize: 20,
+        paddingHorizontal: 10,
     },
     navigationText: {
         fontSize: 14, 
         color: 'darkblue',
-        top: 20,
-        alignSelf: 'center'
     },
     submitButton: {
         top: 10,
