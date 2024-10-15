@@ -9,7 +9,7 @@ import {
     TextInput,
     Button,
 } from "react-native";
-import COLORS from "../constants/colors";
+import COLORS from "../../constants/colors";
 
 const { width, height } = Dimensions.get("screen")
 const screen_height = height;
