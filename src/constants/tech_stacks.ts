@@ -1,32 +1,39 @@
 interface IStack {
     language: string
-    stacks: string[]
 }
 
 const STACKS: IStack[] = [
     {
-        language: 'Python',
-        stacks: [
-            'Flask',
-            'Django',
-            'FastApi',
-            'Bottle',
-        ]
+        language: 'Folder 1',
     },
     {
-        language: 'Javascript',
-        stacks: [
-            'React js',
-            'Node js',
-            'Next js',
-            'Nest js',
-        ]
+        language: 'Folder 2',
     },
     {
-        language: 'Kotlin',
-        stacks: [
-            'Android',
-        ]
-    }
+        language: 'Folder 3',
+
+    },
+    {
+        language: 'Folder 4',
+    },
+    {
+        language: 'Folder 5',
+    },
+    {
+        language: 'Folder 6',
+    },
+    {
+        language: 'Folder 7',
+    },
+    {
+        language: 'Folder 8',
+    },
+    {
+        language: 'Folder 9',
+    },
+    {
+        language: 'Folder 10',
+    },
+    
 ]
 export default STACKS;
