@@ -75,7 +75,7 @@ const Login = ({ navigation }: any) => {
                     <View style={styles.submitButton}>
                         <Button
                             title="Login"
-                            color={'green'}
+                            color={COLORS.primary}
                         />
                     </View>
                     <View style={{
