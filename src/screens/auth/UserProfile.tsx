@@ -62,12 +62,6 @@ const UserProfile = ({ navigation }: any) => {
                             <View style={styles.stackCard}>
                                 <Text style={{ fontSize: 16, alignSelf: 'center' }}>{item.language}</Text>
                                 <View style={styles.circleBg}>
-                                    <Text style={{
-                                        padding: 10,
-                                        color: COLORS.white,
-                                    }}>
-                                        {item.stacks.length < 12 ? item.stacks.length : `${item.stacks.length}+`}
-                                    </Text>
                                 </View>
                             </View>
                         )}
