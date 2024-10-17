@@ -22,7 +22,7 @@ const Stack = createStackNavigator();
 function App(): React.JSX.Element {
   return (
     <NavigationContainer>
-      <Stack.Navigator screenOptions={{ headerShown: false }} initialRouteName='gallary'>
+      <Stack.Navigator screenOptions={{ headerShown: false }} initialRouteName='home'>
         <Stack.Screen name='home' component={Home} />
         <Stack.Screen name='signup' component={Signup} />
         <Stack.Screen name='login' component={Login} />
