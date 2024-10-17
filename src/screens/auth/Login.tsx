@@ -76,6 +76,7 @@ const Login = ({ navigation }: any) => {
                         <Button
                             title="Login"
                             color={COLORS.primary}
+                            onPress={() => navigation.navigate("gallary")}
                         />
                     </View>
                     <View style={{
