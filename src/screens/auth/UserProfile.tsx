@@ -12,7 +12,7 @@ import {
     ScrollView,
     TouchableHighlight,
 } from "react-native";
-import STACKS from "../../constants/tech_stacks";
+import STACKS from "../../constants/folders";
 import COLORS from "../../constants/colors";
 
 const { width } = Dimensions.get('screen')

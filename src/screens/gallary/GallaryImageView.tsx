@@ -1,8 +1,15 @@
-import { Dimensions, FlatList, Image, ImageBackground, SafeAreaView, ScrollView, StatusBar, StyleSheet, Text, TouchableOpacity, View } from "react-native"
+import {
+    Dimensions,
+    Image,
+    SafeAreaView,
+    StatusBar,
+    StyleSheet,
+    Text,
+    TouchableOpacity,
+    View,
+} from "react-native"
 import COLORS from "../../constants/colors"
-import STACKS from "../../constants/tech_stacks"
 import Icon from "react-native-vector-icons/MaterialCommunityIcons";
-import IMAGES from "../../constants/images";
 import FolderList from "./components/FolderList";
 
 const { width, height } = Dimensions.get('screen');

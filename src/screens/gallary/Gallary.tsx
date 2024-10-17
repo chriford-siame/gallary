@@ -1,41 +1,57 @@
-import { Dimensions, FlatList, Image, SafeAreaView, StatusBar, StyleSheet, Text, TouchableOpacity, View } from "react-native"
+import { Dimensions, FlatList, Image, RefreshControl, SafeAreaView, ScrollView, StatusBar, StyleSheet, Text, TouchableOpacity, View } from "react-native"
 import COLORS from "../../constants/colors"
-import Icon from "react-native-vector-icons/MaterialCommunityIcons";
-import IMAGES from "../../constants/images";
 import FolderList from "./components/FolderList";
+import IMAGES from "../../constants/images";
+import Icon from "react-native-vector-icons/MaterialCommunityIcons";
+import React from "react";
 
 const { width } = Dimensions.get('screen');
 const Gallary = ({ navigation }: any) => {
+    const [refreshing, setRefreshing] = React.useState(false);
+    const onRefresh = React.useCallback(() => {
+        setRefreshing(true);
+        setTimeout(() => {
+            setRefreshing(false);
+        }, 2000);
+    }, []);
+
     return (
         <SafeAreaView style={styles.main}>
+            <ScrollView
+                contentContainerStyle={{flex: 1}}
+                refreshControl={
+                    <RefreshControl refreshing={refreshing} onRefresh={onRefresh} />
+                }>
             <StatusBar translucent backgroundColor={COLORS.primary} />
-            <View style={styles.body}>
-                <FolderList />
-                <FlatList
-                    horizontal={false}
-                    numColumns={2}
-                    showsHorizontalScrollIndicator={false}
-                    keyExtractor={(item, index) => index.toString()}
-                    data={IMAGES}
-                    style={{ top: 10, borderBottomColor: 'gray', borderBottomWidth: 1, paddingBottom: 25, width: width }}
-                    renderItem={({ item }) => (
-                        <View style={{ padding: 5 }}>
-                            <TouchableOpacity style={styles.card} activeOpacity={0.8} onPress={() => navigation.navigate("gallary_image_view", item)}>
-                                <Image source={item.image} style={styles.body_gallary} />
-                            </TouchableOpacity>
-                            <View style={{flexDirection: 'row', justifyContent: 'space-between', paddingHorizontal: 4}}>
-                                <Text style={{fontSize: 12}}>posted:</Text>
-                                <Text style={{fontSize: 12}}>10th Aug, 2024</Text>
+                <View style={styles.body}>
+                    <FolderList />
+                    <FlatList
+                        horizontal={false}
+                        numColumns={2}
+                        showsHorizontalScrollIndicator={false}
+                        keyExtractor={(item, index) => index.toString()}
+                        data={IMAGES}
+                        style={{ top: 10, borderBottomColor: 'gray', borderBottomWidth: 1, paddingBottom: 25, width: width }}
+                        renderItem={({ item }) => (
+                            <View style={{ padding: 5 }}>
+                                <TouchableOpacity style={styles.card} activeOpacity={0.8} onPress={() => navigation.navigate("gallary_image_view", item)}>
+                                    <Image source={item.image} style={styles.body_gallary} />
+                                </TouchableOpacity>
+                                <View style={{ flexDirection: 'row', justifyContent: 'space-between', paddingHorizontal: 4 }}>
+                                    <Text style={{ fontSize: 12 }}>posted:</Text>
+                                    <Text style={{ fontSize: 12 }}>10th Aug, 2024</Text>
+                                </View>
                             </View>
-                        </View>
-                    )}
-                />
-            </View>
-            <View style={styles.footer}>
-                <Text style={{ color: 'black' }}>
-                    <Icon name="upload" size={20} color={'white'} />
-                </Text>
-            </View>
+                        )}
+                    />
+                </View>
+                <View style={styles.footer}>
+                    <Text style={{ color: 'black' }}>
+                        <Icon name="upload" size={20} color={'white'} />
+                    </Text>
+                </View>
+            </ScrollView>
+
         </SafeAreaView >
     )
 }
@@ -69,7 +85,6 @@ const styles = StyleSheet.create({
     },
 
     card: {
-        backgroundColor: COLORS.light,
         borderRadius: 5,
     },
 })
