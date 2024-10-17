@@ -3,20 +3,10 @@ interface IFolder {
 }
 
 const FOLDERS: IFolder[] = [
-    {
-        name: 'Friends',
-    },
-    {
-        name: 'Family',
-    },
-    {
-        name: 'Luxury',
-    },
-    {
-        name: 'Quotes',
-    },
-    {
-        name: 'Tourism',
-    }, 
+    { name: 'Friends', },
+    { name: 'Family', },
+    { name: 'Luxury', },
+    { name: 'Quotes', },
+    { name: 'Tourism', }, 
 ]
 export default FOLDERS;
