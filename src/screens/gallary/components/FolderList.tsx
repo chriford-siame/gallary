@@ -1,6 +1,6 @@
 import { FlatList, StyleSheet, Text, View } from "react-native"
 import STACKS from "../../../constants/tech_stacks"
-import { Icon } from "react-native-vector-icons/Icon"
+import Icon from "react-native-vector-icons/MaterialCommunityIcons";
 import COLORS from "../../../constants/colors"
 
 
