@@ -19,12 +19,15 @@ const GallaryImageView = ({ navigation, route }: any) => {
                         <Image source={item.image} style={styles.body_gallary} />
                     </TouchableOpacity>
                 </View>
+                <View style={{ flexDirection: 'row', justifyContent: 'space-between', paddingHorizontal: 4 }}>
+                    <Text style={{ fontSize: 12 }}>posted:</Text>
+                    <Text style={{ fontSize: 12 }}>10th Aug, 2024</Text>
+                </View>
             </View>
             <View style={styles.footer}>
                 <Text style={{ color: 'black' }}>
                     <Icon name="upload" size={20} color={'white'} />
                 </Text>
-
             </View>
         </SafeAreaView >
     )
