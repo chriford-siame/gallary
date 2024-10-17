@@ -23,8 +23,9 @@ const Gallary = ({ navigation }: any) => {
                             <TouchableOpacity style={styles.card} activeOpacity={0.8} onPress={() => navigation.navigate("gallary_image_view", item)}>
                                 <Image source={item.image} style={styles.body_gallary} />
                             </TouchableOpacity>
-                            <View>
-                                <Text>GalImage1</Text>
+                            <View style={{flexDirection: 'row', justifyContent: 'space-between', paddingHorizontal: 4}}>
+                                <Text style={{fontSize: 12}}>posted:</Text>
+                                <Text style={{fontSize: 12}}>10th Aug, 2024</Text>
                             </View>
                         </View>
                     )}
@@ -50,7 +51,9 @@ const styles = StyleSheet.create({
     body_gallary: {
         width: 170,
         height: 140,
-        borderRadius: 10
+        borderRadius: 10,
+        borderBottomRightRadius: 0,
+        borderBottomLeftRadius: 0,
     },
     footer: {
         height: 40,
